@@ -87,42 +87,46 @@ function App() {
           </div>
 
           {/* Video Section */}
-          <div className="relative max-w-5xl mx-auto mb-12">
-            <div className="relative bg-black rounded-2xl overflow-hidden shadow-2xl">
-              <div className="aspect-video bg-gradient-to-r from-slate-900/80 to-gray-900/80 flex items-center justify-center">
-                {!isVideoPlaying ? (
-                  <div className="text-center">
-                    <button
-                      onClick={() => setIsVideoPlaying(true)}
-                      className="group relative inline-flex items-center justify-center w-24 h-24 bg-blue-600 hover:bg-blue-700 rounded-full transition-all duration-300 transform hover:scale-110 shadow-lg"
-                    >
-                      <Play className="w-8 h-8 text-white ml-1" fill="white" />
-                      <div className="absolute inset-0 rounded-full bg-blue-400 animate-ping opacity-25"></div>
-                    </button>
-                    <p className="text-white text-lg mt-6">
-                      How We Systemized Growth for 10+ Agencies
-                    </p>
-                    <p className="text-gray-400 text-sm mt-2">
-                      ⏱ 8 minutes • Game-changing insights
-                    </p>
-                  </div>
-                ) : (
-                  <div className="w-full h-full flex items-center justify-center text-white">
-                    <div className="text-center">
-                      <div className="animate-spin rounded-full h-12 w-12 border-4 border-blue-400 border-t-transparent mx-auto mb-4"></div>
-                      <p>Your video would load here</p>
-                      <p className="text-sm text-gray-400 mt-2">Replace this placeholder with your actual video, dm me if you don't know how ;)</p>
-                      <button 
-                        onClick={() => setIsVideoPlaying(false)}
-                        className="mt-4 text-blue-400 hover:text-blue-300 underline"
-                      >
-                        ← Back to thumbnail
-                      </button>
-                    </div>
-                  </div>
-                )}
-              </div>
-            </div>
+<div className="relative max-w-5xl mx-auto mb-12">
+  <div className="relative bg-black rounded-2xl overflow-hidden shadow-2xl">
+    <div className="aspect-video bg-gradient-to-r from-slate-900/80 to-gray-900/80 flex items-center justify-center">
+      {!isVideoPlaying ? (
+        <div className="text-center">
+          <button
+            onClick={() => setIsVideoPlaying(true)}
+            className="group relative inline-flex items-center justify-center w-24 h-24 bg-blue-600 hover:bg-blue-700 rounded-full transition-all duration-300 transform hover:scale-110 shadow-lg"
+          >
+            <Play className="w-8 h-8 text-white ml-1" fill="white" />
+            <div className="absolute inset-0 rounded-full bg-blue-400 animate-ping opacity-25"></div>
+          </button>
+          <p className="text-white text-lg mt-6">
+            How We Systemized Growth for 10+ Agencies
+          </p>
+          <p className="text-gray-400 text-sm mt-2">
+            ⏱ 8 minutes • Game-changing insights
+          </p>
+        </div>
+      ) : (
+        <div className="w-full h-full relative">
+          <iframe
+            className="w-full h-full"
+            src="https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1"
+            title="YouTube video"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+          <button
+            onClick={() => setIsVideoPlaying(false)}
+            className="absolute top-4 left-4 bg-black/50 text-white px-3 py-1 rounded hover:bg-black/70"
+          >
+            ← Back
+          </button>
+        </div>
+      )}
+    </div>
+  </div>
+</div>
             
             {/* Video Stats */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
