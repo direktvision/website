@@ -1,0 +1,13 @@
+[build]
+  base = "project"
+  command = "npm ci && npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# SPA fallback (you also have dist/_redirects, but belt + suspenders)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
