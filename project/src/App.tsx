@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Play, CheckCircle, Star, Users, Target, TrendingUp, Clock, Shield } from 'lucide-react';
+import React, { useState } from "react";
+import { Play, CheckCircle, Star, Users, Target, TrendingUp, Clock, Shield } from "lucide-react";
 
 function App() {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
@@ -86,7 +86,7 @@ function App() {
             </p>
           </div>
 
-          {/* Video Section */}
+{/* Video Section */}
 <div className="relative max-w-5xl mx-auto mb-12">
   <div className="relative bg-black rounded-2xl overflow-hidden shadow-2xl">
     <div className="aspect-video bg-gradient-to-r from-slate-900/80 to-gray-900/80 flex items-center justify-center">
@@ -126,7 +126,7 @@ function App() {
       )}
     </div>
   </div>
-</div>
+</div>             
             
             {/* Video Stats */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
